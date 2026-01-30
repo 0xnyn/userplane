@@ -1,0 +1,173 @@
+# Vercel Composition Patterns Audit
+
+**Repository:** userplane
+**Audit Date:** January 30, 2026
+**Methodology:** Vercel Composition Patterns Skill v1.0.0
+
+---
+
+## Overview
+
+This audit analyzes the userplane monorepo against Vercel's React Composition Patterns guidelines. The audit covers two main applications:
+
+| App | Framework | React Version | Components | Audit Status |
+|-----|-----------|---------------|------------|--------------|
+| **Dash** | Next.js 15.4.5 | 19.1.1 | 130+ | ✅ Complete |
+| **Recorder** | Astro 5.15.9 | 19.2.0 | 25+ | ✅ Complete |
+
+---
+
+## Quick Summary
+
+### Overall Scores by Category
+
+| Category | Dash App | Recorder App | Priority |
+|----------|----------|--------------|----------|
+| Boolean Props | 6/10 | 7/10 | 🔴 HIGH |
+| forwardRef Migration | 9/10 | 10/10 | 🟡 MEDIUM |
+| useContext Migration | 10/10 | 5/10 | 🟡 MEDIUM |
+| Prop Complexity | 5/10 | 7/10 | 🔴 HIGH |
+| Callback Props | 6/10 | 7/10 | 🟡 MEDIUM |
+| State Lifting | 7/10 | 8/10 | 🟢 LOW |
+| Compound Components | 7/10 | 8/10 | 🟡 MEDIUM |
+
+---
+
+## Key Findings
+
+### React 19 API Migration
+
+| Issue | Dash App | Recorder App |
+|-------|----------|--------------|
+| `forwardRef` instances | 2 | 0 ✅ |
+| `useContext` instances | 0 ✅ | 1 (needs `use()`) |
+
+### Boolean Prop Proliferation
+
+| Severity | Dash App | Recorder App |
+|----------|----------|--------------|
+| 🔴 High (3+ booleans) | 2 components | 0 |
+| 🟡 Medium (2 booleans) | 8 components | 3 components |
+| 🟢 Low (1 boolean) | 15+ components | 12+ components |
+
+### High-Prop Components (7+ props)
+
+| Component | App | Props Count |
+|-----------|-----|-------------|
+| CreateDomainModal | Dash | 10 |
+| DomainConfigureModal | Dash | 10 |
+| BillingDetailsModal | Dash | 10+ |
+| DeleteConfirmationModal | Dash | 8 |
+| VerificationErrorScreen | Recorder | 8 |
+| ErrorScreen | Recorder | 7 |
+| PostRecordingReviewScreen | Recorder | 7 |
+| RecordingInProgressScreen | Recorder | 7 |
+
+---
+
+## Priority Action Items
+
+### P0 - Immediate
+
+| # | Action | App | Files | Effort |
+|---|--------|-----|-------|--------|
+| 1 | Migrate useContext to use() | Recorder | 1 | Low |
+| 2 | Migrate URLInput forwardRef | Dash | 1 | Low |
+| 3 | Migrate DomainInput forwardRef | Dash | 1 | Low |
+
+### P1 - Short-term
+
+| # | Action | App | Files | Effort |
+|---|--------|-----|-------|--------|
+| 4 | Extract DomainActionsProvider | Dash | 2 | Medium |
+| 5 | Refactor StreamControls boolean props | Dash | 2 | Medium |
+| 6 | Group ErrorScreen action props | Recorder | 1 | Low |
+| 7 | Create Modal compound component | Dash | 1 new | Medium |
+
+### P2 - Long-term
+
+| # | Action | App | Files | Effort |
+|---|--------|-----|-------|--------|
+| 8 | Refactor useRecordingFlow to useReducer | Recorder | 1 | High |
+| 9 | Standardize all modal prop patterns | Dash | 37 | High |
+| 10 | Create shared component library patterns | Both | Multiple | High |
+
+---
+
+## Audit Files
+
+| File | Description |
+|------|-------------|
+| [DASH_APP_AUDIT.md](./DASH_APP_AUDIT.md) | Detailed audit of the Dash application |
+| [RECORDER_APP_AUDIT.md](./RECORDER_APP_AUDIT.md) | Detailed audit of the Recorder application |
+
+---
+
+## Patterns Reference
+
+### Vercel Composition Patterns Covered
+
+1. **Component Architecture**
+   - ✅ Avoid Boolean Prop Proliferation
+   - ✅ Use Compound Components
+
+2. **State Management**
+   - ✅ Decouple State Management from UI
+   - ✅ Define Generic Context Interfaces
+   - ✅ Lift State into Provider Components
+
+3. **Implementation Patterns**
+   - ✅ Create Explicit Component Variants
+   - ✅ Prefer Composing Children Over Render Props
+
+4. **React 19 APIs**
+   - ✅ No forwardRef (use ref as prop)
+   - ✅ use() instead of useContext()
+
+---
+
+## What's Working Well
+
+### Dash App ✅
+- Provider architecture with clear separation
+- Zustand for client state management
+- Custom hooks with useReducer for complex state
+- No render props patterns
+
+### Recorder App ✅
+- Single centralized AppModeContext
+- Well-designed derived convenience hooks
+- Proper cleanup patterns in all effects
+- No forwardRef usage
+
+---
+
+## How to Use This Audit
+
+1. **Start with P0 items** - These are quick wins with high impact
+2. **Review detailed audits** - Read app-specific files for full context
+3. **Follow patterns** - Use the code examples in each audit
+4. **Track progress** - Mark items complete as you refactor
+
+---
+
+## Methodology
+
+This audit was performed using:
+
+- **Vercel Composition Patterns Skill** - Pattern detection and recommendations
+- **Static Analysis** - grep, glob for pattern matching
+- **Manual Review** - Component architecture analysis
+
+### Files Analyzed
+
+| Category | Dash App | Recorder App |
+|----------|----------|--------------|
+| Components | 146 files | 25 files |
+| Hooks | 20+ files | 2 files |
+| Contexts | 2 files | 1 file |
+| Stores | 1 file | 0 files |
+
+---
+
+*Generated by Claude Code using Vercel Composition Patterns Skill*

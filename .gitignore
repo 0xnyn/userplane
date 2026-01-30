@@ -83,6 +83,7 @@ apps/api/localhost
 !README.md
 !CLAUDE.md
 !AGENTS.md
+!audit/*.md
 
 
 
