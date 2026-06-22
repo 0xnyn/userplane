@@ -39,8 +39,8 @@
     "zod": "^4.4.3"
   },
   "peerDependencies": {
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",
@@ -51,8 +51,8 @@
     "@userplane/eslint-config": "*",
     "@userplane/typescript-config": "*",
     "eslint": "^9.39.4",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "react-hook-form": "^7.75.0",
     "tailwindcss": "^4.3.0",
     "typescript": "^5.9.3"
