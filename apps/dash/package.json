@@ -32,7 +32,7 @@
     "boring-avatars": "^2.0.4",
     "date-fns": "^4.1.0",
     "dotenv": "^17.4.2",
-    "lucide-react": "^0.563.0",
+    "lucide-react": "^1.23.0",
     "nanoid": "^5.1.11",
     "next": "16.2.9",
     "nuqs": "^2.8.9",
