@@ -19,7 +19,7 @@
     "@userplane/shared": "*",
     "@userplane/storage": "*",
     "hono": "^4.12.18",
-    "inngest": "^3.54.2",
+    "inngest": "^4.11.0",
     "jsonwebtoken": "^9.0.2",
     "nanoid": "^5.1.11",
     "posthog-node": "^4.3.1",
