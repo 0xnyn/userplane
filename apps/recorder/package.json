@@ -28,7 +28,7 @@
     "@userplane/ui": "*",
     "canvas-confetti": "^1.9.3",
     "dotenv": "^17.4.2",
-    "lucide-react": "^0.563.0",
+    "lucide-react": "^1.23.0",
     "next": "16.2.9",
     "posthog-js": "^1.372.10",
     "react": "19.2.7",
