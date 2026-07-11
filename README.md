@@ -24,8 +24,6 @@
   </p>
 </div>
 
-![Introducing Userplane](assets/videos/introducing-userplane.mp4)
-
 ![Userplane dashboard overview](apps/docs/media/recordings/recordings-list.png)
 
 Loom is for your team. Userplane is for your customers — async issue capture that turns "it broke" into a debug-ready artifact your entire support chain can act on.
@@ -122,8 +120,6 @@ The customer opens the link and records in their browser — no account, install
 The recording lands in Userplane with video and debugging context attached. Support sees the issue through the customer's lens, engineering inspects the technical signals, everyone works from the same evidence.
 
 ![Recording info panel](apps/docs/media/recordings/recording-info-tab.png)
-
-![Request screen recordings with console logs](assets/videos/request-screen-recordings.mp4)
 
 ## How Userplane Compares
 
@@ -238,7 +234,6 @@ Guided setup for workspaces, integrations, and team invitations.
 
 **Claude Code** — audit, debug, integrate, and analyze recordings with Claude via MCP tools and agent skills
 
-![Userplane for Claude Code](assets/videos/userplane-for-claude.mp4)
 
 **Cursor / Codex** — MCP integration and workflow automation for AI-driven analysis
 
@@ -251,8 +246,6 @@ Guided setup for workspaces, integrations, and team invitations.
 
 **Webhooks & automation** — create links from your product or backend; integrate with Jira, Linear, and other issue trackers
 
-![Userplane for Issue Trackers](assets/videos/userplane-for-issue-trackers.mp4)
-
 ## Privacy, Control, And Trust
 
 ![Userplane privacy and security controls](apps/docs/media/recorder/recorder-data-blurr-in-action-part-1.png)
@@ -260,8 +253,6 @@ Guided setup for workspaces, integrations, and team invitations.
 Recording customer sessions is powerful, so the capture surface needs controls. Userplane includes workspace, domain, project, link, sharing, retention, and capture preferences that help teams collect useful context without collecting everything.
 
 **Data capture controls:** configure what a domain can capture (screen, audio, console, network), blur sensitive fields before they're recorded (credit cards, passwords, SSNs), redaction rules per field type or custom pattern, customer-side controls in the recorder UI.
-
-![Redact Sensitive Information](assets/videos/redact-sensitive-info.mp4)
 
 **Access & sharing:** workspace membership and roles, invite policies (public, protected, private), recording sharing with expiry controls and view-only or full-access modes, collaborator tracking.
 
