@@ -41,7 +41,7 @@
     "@userplane/typescript-config": "*",
     "eslint": "^10.7.0",
     "terser": "^5.46.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vite": "^8.1.5",
     "vite-plugin-dts": "^4.4.0"
   }

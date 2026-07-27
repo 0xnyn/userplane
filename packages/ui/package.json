@@ -55,7 +55,7 @@
     "react-dom": "^19.2.7",
     "react-hook-form": "^7.75.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "exports": {
     "./globals.css": "./src/styles/globals.css",

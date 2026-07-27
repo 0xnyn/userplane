@@ -60,7 +60,7 @@
     "playwright": "^1.59.1",
     "storybook": "^10.3.6",
     "tw-animate-css": "^1.3.6",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "vitest": "^4.1.5"
   }
 }

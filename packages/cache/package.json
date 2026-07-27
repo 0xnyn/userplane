@@ -37,7 +37,7 @@
     "@userplane/eslint-config": "*",
     "@userplane/typescript-config": "*",
     "hono": "^4.12.18",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "hono": "^4.12.18"

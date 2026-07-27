@@ -68,6 +68,6 @@
     "@userplane/typescript-config": "*",
     "eslint": "^10.7.0",
     "storybook": "^10.3.6",
-    "typescript": "^6.0.3"
+    "typescript": "^7.0.2"
   }
 }
