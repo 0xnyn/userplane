@@ -58,12 +58,16 @@ export interface VerificationFlowActions {
  * @param token - Verification token from URL
  * @param workspaceIds - Workspace IDs from URL
  * @param bridge - Verification bridge connection to parent SDK (required in embedded mode)
+ * @param isBridgeConnected - Whether the bridge has finished connecting. The bridge is a
+ *   singleton whose reference never changes, so this is what re-runs the start effect once
+ *   the connection lands.
  * @returns Verification state and actions
  */
 export function useVerificationFlow(
   token: string,
   workspaceIds: string[],
-  bridge: VerificationBridgeConnection | null
+  bridge: VerificationBridgeConnection | null,
+  isBridgeConnected: boolean
 ): {
   state: VerificationState;
   actions: VerificationFlowActions;
@@ -146,7 +150,7 @@ export function useVerificationFlow(
   useEffect(() => {
     if (verificationAttemptedRef.current) return;
     // Wait for bridge to be available before attempting verification
-    if (!bridge?.isConnected()) {
+    if (!isBridgeConnected || !bridge?.isConnected()) {
       logger.debug('waiting for bridge connection');
       return;
     }
@@ -158,7 +162,7 @@ export function useVerificationFlow(
       await Promise.resolve();
       await verify();
     })();
-  }, [verify, bridge]);
+  }, [verify, bridge, isBridgeConnected]);
 
   return {
     state: {

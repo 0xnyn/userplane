@@ -50,7 +50,13 @@ function VerificationAppContent() {
 
   // Initialize verification flow with verification bridge for parent communication
   // The bridge is used to request verification from parent so the origin is correct
-  const { state, actions } = useVerificationFlow(token, workspaceIds, verificationBridge);
+  // The provider marks the lock acquired once the verification bridge connects.
+  const { state, actions } = useVerificationFlow(
+    token,
+    workspaceIds,
+    verificationBridge,
+    crossTabLock.isAcquired
+  );
 
   useEffect(() => {
     logger.debug({ mode, isEmbedded }, 'app initialized');
